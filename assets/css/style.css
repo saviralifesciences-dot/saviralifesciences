@@ -1,0 +1,116 @@
+/* Path: assets/css/style.css */
+
+/* Define Custom Properties (CSS Variables) for color consistency, matching Tailwind config in index.html */
+:root {
+    --savira-navy: #0A1D3A;
+    --savira-cyan: #00AEEF;
+    --savira-coral: #FF583D; /* The logo's red/orange accent color */
+    --savira-text: #1F2937;
+    --savira-bg: #F4F7F9;
+}
+
+/* Page-wide smooth scrolling for nav links */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ------------------------------------------- */
+/* 1. Logo Specific Styling (Enforcing Size)   */
+/* ------------------------------------------- */
+
+/* Custom rule to ensure the prominent logo is not artificially constrained, 
+   allowing it to utilize the full height defined by Tailwind (e.g., h-20/h-24 in index.html) */
+.logo-prominent {
+    /* Allows Tailwind's height classes (like h-24) to dictate the proportional width */
+    max-width: none; 
+    
+    /* Ensure the image scales cleanly within the div container */
+    width: auto;
+    height: 100%; 
+}
+
+/* ------------------------------------------- */
+/* 2. Scroll-Reveal Animations (Fade-Up)       */
+/* ------------------------------------------- */
+
+/* Base styles for scroll-reveal animation (Generic Fade Up) */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px); 
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+}
+
+/* Base styles for the sequential nutrient boxes (Default state is hidden and pushed up) */
+.custom-reveal-1,
+.custom-reveal-2,
+.custom-reveal-3,
+.custom-reveal-4 {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* Delays are added via JavaScript by adding the 'visible' class */
+.scroll-reveal.visible,
+.custom-reveal-1.visible,
+.custom-reveal-2.visible,
+.custom-reveal-3.visible,
+.custom-reveal-4.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Hero Section Animations for text elements (Immediate Load - Fade Up) */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    /* Apply the animation */
+    animation: fadeInUp 0.9s ease-out forwards;
+    opacity: 0; /* Ensure initial state is hidden for the keyframed elements */
+}
+
+/* --- New: Slide-in Animation for "Life Sciences" --- */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px); /* Start further left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-slide-in-left {
+    /* Ensure it starts off-screen (required) */
+    display: inline-block; 
+    opacity: 0;
+    /* Match timing with the rest of the Hero section fade-in */
+    animation: slideInLeft 1s ease-out forwards; 
+    animation-delay: 0.2s; /* Apply a slight delay after the H1 starts */
+}
+/* ------------------------------------------------ */
+
+
+/* Delay utilities for sequential loading (retained for elements using the CSS animation) */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ------------------------------------------- */
+/* 3. Custom Utility: Loading Spinner          */
+/* ------------------------------------------- */
+/* (Styles for spinner handled by Tailwind classes in index.html) */
