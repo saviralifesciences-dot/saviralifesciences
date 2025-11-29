@@ -64,6 +64,11 @@
         .custom-reveal-2 { transition-delay: 0.3s; }
         .custom-reveal-3 { transition-delay: 0.4s; }
         .custom-reveal-4 { transition-delay: 0.5s; }
+        
+        /* Custom dropdown styling for width */
+        #products-dropdown-menu {
+            width: 500px; /* Wider for two columns */
+        }
     </style>
 
     <script>
@@ -103,25 +108,43 @@
                 
                 <div class="relative group">
                     <button class="nav-link text-savira-text hover:text-savira-cyan transition-colors duration-300 tracking-wide flex items-center" id="products-dropdown-toggle" aria-expanded="false">
-                        Our Products
+                        Our Divisions
                         <svg class="w-4 h-4 ml-1 transition-transform duration-200 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div id="products-dropdown-menu" class="absolute left-1/2 -translate-x-1/2 mt-3 w-60 bg-white rounded-xl shadow-2xl ring-1 ring-savira-navy/10 opacity-0 invisible transition-all duration-300 transform scale-95 origin-top-center pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:pointer-events-auto z-50">
-                        <div class="py-2">
-                            <a href="#nutrivira" class="block px-6 py-3 text-savira-navy hover:bg-savira-bg hover:text-savira-coral transition-colors duration-200 font-medium rounded-lg m-2">
-                                NutriVIRA Junior
-                            </a>
-                            <div class="h-px bg-savira-gray mx-4 my-1"></div>
-                            <a href="savimont-lc-kid.html" class="block px-6 py-3 text-savira-navy hover:bg-savira-bg hover:text-savira-cyan transition-colors duration-200 font-medium rounded-lg m-2">
-                                SAVIMONT-LC KID
-                            </a>
-                            <div class="h-px bg-savira-gray mx-4 my-1"></div>
-                            <a href="virad3.html" class="block px-6 py-3 text-savira-navy hover:bg-savira-bg hover:text-savira-coral transition-colors duration-200 font-medium rounded-lg m-2">
-                                Vira-D3
-                            </a>
+                    <div id="products-dropdown-menu" class="absolute left-1/2 -translate-x-1/2 mt-3 **w-[500px]** bg-white rounded-xl shadow-2xl ring-1 ring-savira-navy/10 opacity-0 invisible transition-all duration-300 transform scale-95 origin-top-center pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:scale-100 group-hover:pointer-events-auto z-50">
+                        <div class="p-4 grid grid-cols-2 gap-4">
+                            
+                            <div>
+                                <h4 class="text-savira-coral font-bold px-4 py-2 border-b border-savira-gray mb-2">Novus (New Born)</h4>
+                                <a href="virad3.html" class="block px-4 py-2 text-savira-navy hover:bg-savira-bg hover:text-savira-cyan transition-colors duration-200 rounded-lg">
+                                    Vira D3
+                                </a>
+                                <a href="troovit.html" class="block px-4 py-2 text-savira-navy hover:bg-savira-bg hover:text-savira-cyan transition-colors duration-200 rounded-lg">
+                                    Troovit
+                                </a>
+                                <a href="nsjr-drops.html" class="block px-4 py-2 text-savira-navy hover:bg-savira-bg hover:text-savira-cyan transition-colors duration-200 rounded-lg">
+                                    NSjr drops
+                                </a>
+                            </div>
+
+                            <div>
+                                <h4 class="text-savira-coral font-bold px-4 py-2 border-b border-savira-gray mb-2">Apex (Pediatrics)</h4>
+                                <a href="savimont-lc-kid.html" class="block px-4 py-2 text-savira-navy hover:bg-savira-bg hover:text-savira-cyan transition-colors duration-200 rounded-lg">
+                                    Savimomnt lc
+                                </a>
+                                <a href="#nutrivira" class="block px-4 py-2 text-savira-navy hover:bg-savira-bg hover:text-savira-cyan transition-colors duration-200 rounded-lg">
+                                    Nutrivira
+                                </a>
+                                <div class="h-px bg-savira-gray mx-4 my-2"></div>
+                                <h4 class="text-savira-cyan font-bold px-4 py-2">Winks Baby Division</h4>
+                                <a href="winks-products.html" class="block px-4 py-2 text-savira-navy hover:bg-savira-bg hover:text-savira-coral transition-colors duration-200 rounded-lg">
+                                    View All Winks Products
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
+                
                 <a href="#excellence" class="nav-link text-savira-text hover:text-savira-cyan transition-colors duration-300 tracking-wide">Standards</a>
                 <a href="#contact" class="nav-link text-savira-text hover:text-savira-cyan transition-colors duration-300 tracking-wide">Contact</a>
             </div>
@@ -136,13 +159,21 @@
             
             <div class="mobile-products-group">
                 <button id="mobile-products-toggle" class="w-full text-left px-6 py-4 text-savira-navy font-semibold flex justify-between items-center hover:bg-savira-bg transition-colors duration-200">
-                    Our Products
+                    Our Divisions
                     <svg class="w-5 h-5 transition-transform duration-300" id="mobile-products-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                 </button>
                 <div id="mobile-products-links" class="hidden bg-savira-gray/50 border-t border-savira-gray">
-                    <a href="#nutrivira" class="mobile-nav-link block pl-12 pr-6 py-3 text-savira-navy hover:bg-savira-bg transition-colors duration-200" data-target="nutrivira">NutriVIRA Junior</a>
-                    <a href="savimont-lc-kid.html" class="mobile-nav-link block pl-12 pr-6 py-3 text-savira-navy hover:bg-savira-bg transition-colors duration-200" data-target="savimont">SAVIMONT-LC KID</a>
-                    <a href="virad3.html" class="mobile-nav-link block pl-12 pr-6 py-3 text-savira-navy hover:bg-savira-bg transition-colors duration-200" data-target="virad3">Vira-D3</a>
+                    
+                    <h5 class="block pl-8 pr-6 py-2 text-savira-coral font-bold text-sm uppercase">Novus (New Born)</h5>
+                    <a href="virad3.html" class="mobile-nav-link block pl-12 pr-6 py-3 text-savira-navy hover:bg-savira-bg transition-colors duration-200" data-target="vira-d3">Vira D3</a>
+                    <a href="troovit.html" class="mobile-nav-link block pl-12 pr-6 py-3 text-savira-navy hover:bg-savira-bg transition-colors duration-200" data-target="troovit">Troovit</a>
+                    <a href="nsjr-drops.html" class="mobile-nav-link block pl-12 pr-6 py-3 text-savira-navy hover:bg-savira-bg transition-colors duration-200" data-target="nsjr-drops">NSjr drops</a>
+                    
+                    <h5 class="block pl-8 pr-6 py-2 text-savira-cyan font-bold text-sm uppercase mt-2">Apex (Pediatrics)</h5>
+                    <a href="savimont-lc-kid.html" class="mobile-nav-link block pl-12 pr-6 py-3 text-savira-navy hover:bg-savira-bg transition-colors duration-200" data-target="savimomnt-lc">Savimomnt lc</a>
+                    <a href="#nutrivira" class="mobile-nav-link block pl-12 pr-6 py-3 text-savira-navy hover:bg-savira-bg transition-colors duration-200" data-target="nutrivira">Nutrivira</a>
+
+                    <a href="winks-products.html" class="mobile-nav-link block px-6 py-4 text-savira-navy font-semibold border-t border-savira-gray/70 hover:bg-savira-bg transition-colors duration-200" data-target="winks">Winks baby division</a>
                 </div>
             </div>
             
@@ -391,7 +422,7 @@
                         <h4 class="font-bold text-xl text-savira-navy mb-2">Corporate Affairs</h4>
                         <p class="text-gray-600 text-lg">
                             Email: <a href="mailto:saviralifesciences@gmail.com" class="text-savira-navy hover:underline">saviralifesciences@gmail.com</a><br>
-                            <span class="font-semibold text-savira-navy">Phone: +91 (22) 1234 5678</span>
+                            <span class="font-semibold text-savira-navy">Phone: +919948480101</span>
                         </p>
                     </div>
 
