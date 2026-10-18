@@ -3,268 +3,659 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Savira Life Sciences | Product Portfolio</title>
+    <title>Our Products | Savira Life Sciences</title>
+    <meta name="description" content="Explore the Savira Life Sciences pharmaceutical, nutritional and baby-care portfolio.">
     
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/saviramainlogo.png">
 
+    <!-- Fonts: Manrope & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <link rel="stylesheet" href="assets/css/style.css">
-
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        // Authoritative, professional palette
-                        'savira-navy': '#0A1D3A', 
-                        'savira-cyan': '#00AEEF', 
-                        'savira-coral': '#FF583D', 
-                        'savira-text': '#1F2937', 
-                        'savira-bg': '#F4F7F9', 
-                        'savira-gray': '#E5E7EB', 
+                        'savira-navy': '#0C2340',
+                        'savira-orange': '#F26A21',
+                        'button-orange': '#C94B08',
+                        'button-hover': '#B34207',
+                        'savira-body': '#425B7A',
+                        'hero-bg': '#EAF5FD',
+                        'filter-bg': '#F0F5FF',
+                        'card-bg': '#F7F5F2',
+                        'search-border': '#B8C7D9',
+                        'light-border': '#D5DFE8',
+                        'winks-lavender': '#F6F0FD',
+                        'winks-purple': '#7657D5',
+                        'winks-coral': '#FF7D5E',
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Manrope', 'Arial', 'sans-serif'],
+                        body: ['Inter', 'Arial', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        'container': '1272px',
                     }
                 }
             }
         }
     </script>
+
+    <style>
+        :root {
+            --navy: #0C2340;
+            --orange: #F26A21;
+            --button-orange: #C94B08;
+            --body: #425B7A;
+            --white: #FFFFFF;
+            --hero: #EAF5FD;
+            --filter: #F0F5FF;
+            --card: #F7F5F2;
+            --border: #D5DFE8;
+            --lavender: #F6F0FD;
+            --font-heading: 'Manrope', Arial, sans-serif;
+            --font-body: 'Inter', Arial, sans-serif;
+            --container: 1272px;
+            --grid-gap: 24px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--body);
+            background-color: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: var(--font-heading);
+        }
+
+        /* Focus Ring */
+        a:focus-visible, button:focus-visible, input:focus-visible {
+            outline: 3px solid var(--navy);
+            outline-offset: 3px;
+        }
+
+        /* Product Card Hover */
+        .product-card {
+            transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+            border: 1px solid #E8E4DF;
+            border-radius: 10px;
+        }
+        .product-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(12, 35, 64, 0.08);
+            border-color: var(--orange);
+        }
+
+        .container-custom {
+            width: min(calc(100% - 48px), var(--container));
+            margin-inline: auto;
+        }
+
+        .product-grid {
+            display: grid;
+            gap: var(--grid-gap);
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+
+        @media (max-width: 1199px) {
+            .product-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 767px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .container-custom {
+                width: calc(100% - 40px);
+            }
+        }
+        @media (max-width: 479px) {
+            .product-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="antialiased text-savira-text bg-savira-bg">
+<body class="bg-white">
 
-    <header id="main-header" class="sticky top-0 z-50 bg-white shadow-xl backdrop-blur-sm bg-opacity-95 border-b-4 border-savira-cyan/50">
-        <nav class="max-w-8xl mx-auto px-6 lg:px-12 py-3 flex justify-between items-center transition-all duration-300">
-            
-            <a href="index.html" class="flex items-center transition-transform duration-300 hover:scale-[1.03]">
-                <div class="h-20 lg:h-24 w-auto logo-prominent flex items-center">
-                    <img src="assets/images/saviramainlogo.png" alt="Savira Life Sciences Logo" class="h-full w-auto object-contain">
-                </div>
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white border-b border-light-border h-[88px] flex items-center">
+        <div class="container-custom flex justify-between items-center">
+            <!-- Logo links to index.html -->
+            <a href="index.html" class="w-[180px] flex items-center" aria-label="Savira Life Sciences Home">
+                <img src="assets/images/saviramainlogo.png" alt="Savira Life Sciences Logo" class="h-10 lg:h-12 w-auto object-contain">
             </a>
 
-            <div class="hidden lg:flex items-center space-x-10 text-lg font-medium">
-                <a href="index.html" class="nav-link text-savira-text hover:text-savira-cyan transition-colors duration-300 tracking-wide">Home</a>
-                
-                <div class="relative group">
-                    <button class="nav-link flex items-center text-savira-cyan font-bold transition-colors duration-300 tracking-wide focus:outline-none">
-                        Our Products
-                        <svg class="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="absolute left-1/2 transform -translate-x-1/2 mt-3 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 overflow-hidden border border-savira-gray">
-                        <div class="py-2">
-                            <a href="#nutrivira" class="block px-4 py-3 text-savira-navy hover:bg-savira-bg hover:text-savira-coral transition-colors duration-200">
-                                💊 NutriVIRA Junior
-                            </a>
-                            <a href="index.html#savimont" class="block px-4 py-3 text-savira-navy hover:bg-savira-bg hover:text-savira-coral transition-colors duration-200">
-                                🤧 SAVIMONT-LC KID
-                            </a>
-                            <div class="h-px bg-savira-gray my-1"></div>
-                            <a href="#pipeline" class="block px-4 py-3 text-savira-cyan font-semibold hover:bg-savira-bg transition-colors duration-200">
-                                🧪 Product Pipeline
-                            </a>
-                        </div>
-                    </div>
-                </div>
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-[32px] text-[15px] font-medium font-body text-savira-navy">
+                <a href="index.html" class="hover:text-savira-orange transition-colors">Home</a>
+                <a href="about.html" class="hover:text-savira-orange transition-colors">About Us</a>
+                <a href="index.html#divisions" class="hover:text-savira-orange transition-colors">Our Divisions</a>
+                <a href="products.html" aria-current="page" class="relative text-savira-orange font-semibold py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-savira-orange">Our Products</a>
+                <a href="index.html#partner" class="hover:text-savira-orange transition-colors">Partner With Us</a>
+                <a href="index.html#contact" class="hover:text-savira-orange transition-colors">Contact Us</a>
+            </nav>
 
-                <a href="index.html#excellence" class="nav-link text-savira-text hover:text-savira-cyan transition-colors duration-300 tracking-wide">Standards</a>
-                <a href="index.html#contact" class="nav-link text-savira-text hover:text-savira-cyan transition-colors duration-300 tracking-wide">Contact</a>
-            </div>
-
-            <a href="#featured" class="hidden md:block bg-savira-coral text-white px-8 py-3 rounded-full font-bold hover:bg-[#CC462A] transition-all duration-300 shadow-xl transform hover:scale-105 border border-savira-navy/20">
-                Product Showcase
-            </a>
-
-            <button id="menu-button" class="lg:hidden text-savira-navy focus:outline-none p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-savira-navy focus:outline-none p-2" aria-label="Toggle Navigation Menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
-        </nav>
-        
-        <div id="mobile-menu" class="hidden lg:hidden absolute w-full bg-white shadow-2xl transition-transform duration-300 -translate-y-2 border-t border-savira-gray">
-            <a href="index.html" class="mobile-nav-link block px-6 py-4 text-gray-700 hover:bg-savira-bg transition-colors duration-200">Home</a>
-            <a href="#nutrivira" class="mobile-nav-link block px-6 py-4 text-savira-coral font-bold hover:bg-savira-bg transition-colors duration-200">NutriVIRA Junior</a>
-            <a href="index.html#savimont" class="mobile-nav-link block px-6 py-4 text-savira-cyan font-bold hover:bg-savira-bg transition-colors duration-200">SAVIMONT-LC KID</a>
-            <a href="index.html#excellence" class="mobile-nav-link block px-6 py-4 text-gray-700 hover:bg-savira-bg transition-colors duration-200">Our Standards</a>
-            <a href="index.html#contact" class="mobile-nav-link block px-6 py-4 text-gray-700 hover:bg-savira-bg transition-colors duration-200">Contact</a>
+        </div>
+
+        <!-- Mobile Nav Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-[88px] left-0 w-full bg-white border-b border-light-border shadow-lg py-5 px-6 flex flex-col space-y-4 font-medium">
+            <a href="index.html" class="mobile-link text-savira-navy py-1">Home</a>
+            <a href="about.html" class="mobile-link text-savira-navy py-1">About Us</a>
+            <a href="index.html#divisions" class="mobile-link text-savira-navy py-1">Our Divisions</a>
+            <a href="products.html" aria-current="page" class="mobile-link text-savira-orange font-semibold py-1">Our Products</a>
+            <a href="index.html#partner" class="mobile-link text-savira-navy py-1">Partner With Us</a>
+            <a href="index.html#contact" class="mobile-link text-savira-navy py-1">Contact Us</a>
         </div>
     </header>
-    <section id="featured" class="py-20 sm:py-28 min-h-[40vh] flex items-center bg-savira-navy text-white relative shadow-2xl">
-        <div class="absolute inset-0 opacity-15 bg-fixed bg-cover bg-center" style="background-image: url('https://placehold.co/1920x1080/0A1D3A/F4F7F9?text=Product+Showcase');"></div>
-        <div class="absolute inset-0 bg-savira-navy/80 backdrop-blur-[1px]"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 scroll-reveal text-center">
-            <h1 class="text-5xl sm:text-6xl font-extrabold leading-tight mb-4 animate-fade-in-up">
-                Our <span class="text-savira-cyan">Product Portfolio</span>
-            </h1>
-            <p class="text-xl text-savira-bg/90 max-w-4xl mx-auto animate-fade-in-up delay-100 font-light">
-                A curated selection of pediatric-focused pharmaceutical and nutritional solutions, crafted for maximum safety and efficacy.
-            </p>
-        </div>
-    </section>
 
-    <section id="nutrivira" class="py-20 sm:py-28 bg-savira-bg border-b border-savira-gray">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <header class="text-center mb-16 scroll-reveal">
-                <h2 class="text-lg uppercase font-semibold tracking-widest text-savira-coral mb-3">Flagship Nutritional Care</h2>
-                <h3 class="text-4xl font-extrabold text-savira-navy">
-                    NutriVIRA Junior: Multi-Vitamin, Mineral & Amino Acid Syrup
-                </h3>
-            </header>
-
-            <div class="lg:flex lg:space-x-12 items-center">
-                
-                <div class="lg:w-1/3 mb-10 lg:mb-0 scroll-reveal">
-                    <img src="assets/images/anime-style image of men.png" alt="NutriVIRA Junior Multivitamin Syrup Bottle" class="w-full h-auto object-contain rounded-xl shadow-2xl p-4 bg-white border-4 border-savira-coral/50">
-                    <div class="mt-6 text-center">
-                        <span class="text-2xl font-bold text-savira-coral">200 ml Bottle</span>
-                        <p class="text-gray-600">Nutritional Food Supplement</p>
+    <main>
+        <!-- HERO SECTION -->
+        <section class="bg-hero-bg py-[56px] lg:py-[72px] min-h-[408px] flex items-center border-b border-light-border">
+            <div class="container-custom">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-[48px] items-center">
+                    
+                    <!-- Hero Copy -->
+                    <div class="max-w-[680px]">
+                        <p class="text-[12px] font-semibold uppercase tracking-[0.18em] text-button-orange mb-[20px]">
+                            OUR PRODUCTS
+                        </p>
+                        <h1 class="text-[36px] sm:text-[48px] lg:text-[64px] font-heading font-bold text-savira-navy leading-[1.08] tracking-[-0.025em] mb-[20px]">
+                            Our products.<br>Focused on childhood.
+                        </h1>
+                        <p class="text-[17px] sm:text-[18px] lg:text-[20px] font-normal text-savira-body leading-[1.5] max-w-[520px]">
+                            Explore our pharmaceutical, nutritional and baby-care portfolio.
+                        </p>
                     </div>
+
+                    <!-- Hero Artwork / Still Life -->
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="w-full max-w-[580px] h-[330px] flex items-center justify-center p-4">
+                            <img src="assets/images/products-hero-stilllife.png" alt="Savira portfolio showcase" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+
                 </div>
+            </div>
+        </section>
+
+        <!-- CATALOGUE SECTION -->
+        <section class="py-[56px] bg-white">
+            <div class="container-custom">
                 
-                <div class="lg:w-2/3 scroll-reveal delay-200">
-                    <h4 class="text-3xl font-bold text-savira-navy mb-6 border-l-4 border-savira-coral pl-4">Core Benefits:</h4>
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div class="p-5 bg-white rounded-xl shadow-md border-t-4 border-savira-cyan">
-                            <h5 class="font-extrabold text-savira-cyan mb-1 flex items-center">
-                                <span class="text-3xl mr-2">🌟</span> Complete Development
-                            </h5>
-                            <p class="text-gray-700">Contains 18 essential micro-nutrients, including Lysine and Inositol for growth and cognitive function.</p>
+                <h2 class="text-[30px] sm:text-[36px] lg:text-[44px] font-heading font-bold text-savira-navy leading-[1.15] tracking-[-0.02em] mb-[24px]">
+                    Explore our portfolio.
+                </h2>
+
+                <!-- Filters and Search Row -->
+                <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-[24px] mb-[32px]">
+                    
+                    <!-- Filter Tabs -->
+                    <div class="flex items-center gap-[8px] overflow-x-auto pb-2 lg:pb-0" id="filter-tabs" role="tablist">
+                        <button role="tab" aria-selected="true" onclick="filterCatalogue('all')" class="filter-btn h-[48px] px-[20px] rounded-[999px] bg-savira-navy text-white text-[14px] font-medium transition-colors whitespace-nowrap">
+                            All Products
+                        </button>
+                        <button role="tab" aria-selected="false" onclick="filterCatalogue('novus')" class="filter-btn h-[48px] px-[20px] rounded-[999px] bg-filter-bg hover:bg-light-border text-savira-navy text-[14px] font-medium transition-colors whitespace-nowrap">
+                            NOVUS
+                        </button>
+                        <button role="tab" aria-selected="false" onclick="filterCatalogue('nexus')" class="filter-btn h-[48px] px-[20px] rounded-[999px] bg-filter-bg hover:bg-light-border text-savira-navy text-[14px] font-medium transition-colors whitespace-nowrap">
+                            NEXUS
+                        </button>
+                        <a href="https://winksbaby.com" target="_blank" rel="noopener noreferrer" class="h-[48px] px-[20px] rounded-[999px] bg-filter-bg hover:bg-light-border text-savira-navy text-[14px] font-medium flex items-center gap-1.5 transition-colors whitespace-nowrap" aria-label="WINKS BABY, opens in a new tab">
+                            WINKS BABY 
+                            <svg class="w-4 h-4 text-savira-body" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+
+                    <!-- Search Input -->
+                    <div class="w-full lg:w-[360px] relative">
+                        <span class="absolute inset-y-0 left-0 pl-[16px] flex items-center pointer-events-none text-savira-body">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                        </span>
+                        <input type="text" id="product-search" oninput="handleSearch()" placeholder="Search products" class="w-full h-[48px] pl-[48px] pr-[16px] bg-white border border-search-border rounded-[8px] text-[16px] text-savira-navy placeholder-savira-body focus:border-savira-navy transition-colors" aria-label="Search products">
+                    </div>
+
+                </div>
+
+                <!-- Product Grid -->
+                <div class="product-grid" id="product-grid">
+                    
+                    <!-- 1. Nutrivira Jr -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="nutrivira jr" data-division="nexus" data-form="syrup">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/NutriVIRA Junior Syrup Set.png" alt="Nutrivira Jr Syrup packaging" class="max-h-full max-w-full object-contain">
                         </div>
-                        <div class="p-5 bg-white rounded-xl shadow-md border-t-4 border-savira-coral">
-                            <h5 class="font-extrabold text-savira-coral mb-1 flex items-center">
-                                <span class="text-3xl mr-2">🛡️</span> High Potency Immunity
-                            </h5>
-                            <p class="text-gray-700">High concentrations of Zinc, Vitamin D3 (600 IU), and Beta Carotene for robust immune defense.</p>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                Nutrivira Jr
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            Syrup
+                        </p>
+                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                            View Details <span class="text-[18px]">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- 2. Savimont LC -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="savimont lc" data-division="nexus" data-form="syrup">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/product_savimont_lc.png" alt="Savimont LC Syrup packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                Savimont LC
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            Syrup
+                        </p>
+                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                            View Details <span class="text-[18px]">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- 3. Lansavira Jr -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="lansavira jr" data-division="nexus" data-form="15 mg dt">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/Lansavira-JR Pharmaceutical Blister Box.png" alt="Lansavira Jr 15 mg DT packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                Lansavira Jr
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            15 mg DT
+                        </p>
+                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                            View Details <span class="text-[18px]">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- 4. NSjr -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="nsjr" data-division="novus" data-form="drops">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/product_nsjr_drops.png" alt="NSjr Drops packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                NSjr
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            Drops
+                        </p>
+                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                            View Details <span class="text-[18px]">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- 5. VIRA D3 -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="vira d3" data-division="nexus" data-form="drops">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/Vitamin D3 Oral Drops Product Display.png" alt="VIRA D3 Drops packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                VIRA D3
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            Drops
+                        </p>
+                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                            View Details <span class="text-[18px]">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- 6. H-NEB -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="h-neb" data-division="novus" data-form="3% ns respules">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/H-Neb Sodium Chloride Inhalation Solution Box.png" alt="H-NEB 3% NS Respules packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                H-NEB
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            3% NS Respules
+                        </p>
+                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                            View Details <span class="text-[18px]">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- 7. Budavir -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="budavir" data-division="novus" data-form="respules">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/Budavir Nebuliser Suspension Packaging.png" alt="Budavir Respules packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                Budavir
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            Respules
+                        </p>
+                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                            View Details <span class="text-[18px]">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- 8. Microsomal Iron Syrup -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="microsomal iron syrup" data-division="nexus" data-form="syrup">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/microsomal iron syrup.jpeg" alt="Microsomal Iron Syrup packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                Microsomal Iron Syrup
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            Syrup
+                        </p>
+                    </div>
+
+                    <!-- 9. TROOVIT (Coming Soon) -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="troovit" data-division="nexus" data-form="syrup">
+                        <!-- Coming Soon Badge -->
+                        <div class="absolute top-[32px] right-[32px] z-10 bg-white border border-button-orange text-button-orange px-[12px] py-[6px] rounded-[999px] text-[12px] font-medium">
+                            Coming Soon
+                        </div>
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/troovit.jpeg" alt="TROOVIT Syrup packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
+                                TROOVIT
+                            </h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
+                            Syrup
+                        </p>
+                        <span class="text-[15px] font-semibold text-savira-body mt-auto">
+                            Details coming soon
+                        </span>
+                    </div>
+
+                </div>
+
+                <!-- Empty Results State -->
+                <div id="no-products-msg" class="hidden text-center py-[64px]">
+                    <p class="text-[18px] font-medium text-savira-navy mb-4">No products found. Try another name or division.</p>
+                    <button onclick="clearFilters()" class="inline-flex items-center justify-center h-[48px] px-6 bg-savira-navy text-white text-[15px] font-semibold rounded-[8px] hover:bg-button-hover transition-colors">
+                        Clear filters
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- WINKS BABY BANNER -->
+        <section class="bg-winks-lavender py-[56px] lg:py-[64px] min-h-[440px] flex items-center border-t border-light-border">
+            <div class="container-custom">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-[48px] items-center">
+                    
+                    <!-- Left Copy & Logo -->
+                    <div class="max-w-[580px]">
+                        <!-- Winks Baby Original Logo Asset -->
+                        <div class="mb-[24px]">
+                            <img src="assets/images/winkslogo.png" alt="Winks Baby Logo" class="h-10 lg:h-12 w-[170px] lg:w-[230px] object-contain">
+                        </div>
+                        <h2 class="text-[30px] sm:text-[34px] lg:text-[40px] font-heading font-bold text-savira-navy leading-[1.15] tracking-[-0.02em] mb-[20px]">
+                            Everyday care. Thoughtfully created.
+                        </h2>
+                        <p class="text-[17px] sm:text-[18px] font-normal text-savira-body leading-[1.5] mb-[24px]">
+                            Baby skin care and hygiene essentials for everyday care.
+                        </p>
+
+                        <!-- Pills -->
+                        <div class="flex flex-wrap gap-[12px] mb-[32px]">
+                            <span class="inline-flex items-center h-[36px] px-[18px] bg-white border border-light-border text-savira-navy text-[14px] font-medium rounded-[999px]">Skin care</span>
+                            <span class="inline-flex items-center h-[36px] px-[18px] bg-white border border-light-border text-savira-navy text-[14px] font-medium rounded-[999px]">Bath care</span>
+                            <span class="inline-flex items-center h-[36px] px-[18px] bg-white border border-light-border text-savira-navy text-[14px] font-medium rounded-[999px]">Sun care</span>
+                        </div>
+
+                        <!-- Button -->
+                        <div>
+                            <a href="https://winksbaby.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center min-h-[48px] px-[24px] bg-savira-navy hover:bg-button-hover text-white font-semibold text-[15px] rounded-[8px] gap-2 transition-colors" aria-label="Visit Winks Baby, opens in a new tab">
+                                Visit Winks Baby 
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
                         </div>
                     </div>
 
-                    <p class="text-xl text-savira-text mt-8 leading-relaxed">
-                        **Action:** Designed to fill dietary gaps and ensure optimal nutrient absorption necessary for energy production and resistance to illness in growing children.
+                    <!-- Right Artwork -->
+                    <div class="flex justify-center lg:justify-end">
+                        <div class="w-full max-w-[540px] h-[340px] flex items-center justify-center p-4">
+                            <img src="assets/images/winks-banner-skincare.png" alt="Winks Baby skincare essentials" class="max-h-full max-w-full object-contain">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTNER CTA SECTION -->
+        <section class="bg-savira-navy text-white py-[48px] min-h-[192px] flex items-center relative overflow-hidden">
+            <div class="container-custom relative z-10 w-full flex flex-col md:flex-row items-center justify-between gap-6">
+                <div>
+                    <h2 class="text-[30px] sm:text-[34px] lg:text-[40px] font-heading font-bold leading-[1.15] tracking-[-0.02em] mb-2">
+                        Partner with Savira<span class="text-savira-orange">.</span>
+                    </h2>
+                    <p class="text-[17px] sm:text-[18px] font-normal text-gray-300">
+                        Connect with us for distribution and business enquiries.
                     </p>
-                    <a href="index.html#nutrivira" class="mt-6 inline-block bg-savira-navy text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-[#001833] transition-all duration-300 shadow-xl">
-                        View Full Ingredient Details (on Homepage)
+                </div>
+                <div>
+                    <a href="index.html#contact" class="inline-flex items-center justify-center min-h-[48px] px-[24px] bg-button-orange hover:bg-button-hover text-white font-semibold text-[15px] rounded-[8px] transition-colors whitespace-nowrap">
+                        Partner With Us &rarr;
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="savimont" class="py-20 sm:py-28 bg-white border-b border-savira-gray">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <header class="text-center mb-16 scroll-reveal">
-                <h2 class="text-lg uppercase font-semibold tracking-widest text-savira-cyan mb-3">Respiratory & Allergy Relief</h2>
-                <h3 class="text-4xl font-extrabold text-savira-navy">
-                    SAVIMONT-LC KID: Montelukast + Levocetirizine Syrup
-                </h3>
-            </header>
-
-            <div class="lg:flex lg:space-x-12 items-center flex-row-reverse">
+    <footer class="bg-savira-navy text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
                 
-                <div class="lg:w-1/3 mb-10 lg:mb-0 scroll-reveal">
-                    <div class="w-full h-80 bg-savira-bg flex items-center justify-center rounded-xl shadow-2xl p-4 border-4 border-savira-cyan/50">
-                        <div class="text-center">
-                            <span class="text-6xl text-savira-cyan">🤧</span>
-                            <p class="text-savira-navy font-bold mt-2">Montelukast & Levocetirizine</p>
-                            <p class="text-gray-600">Syrup (Rx)</p>
-                        </div>
-                    </div>
-                    <div class="mt-6 text-center">
-                        <span class="text-2xl font-bold text-savira-cyan">Pediatric Formula</span>
-                        <p class="text-gray-600">For allergic rhinitis & asthma symptoms</p>
-                    </div>
-                </div>
-                
-                <div class="lg:w-2/3 scroll-reveal delay-200">
-                    <h4 class="text-3xl font-bold text-savira-navy mb-6 border-l-4 border-savira-cyan pl-4">Mechanism and Indications:</h4>
-                    <div class="grid sm:grid-cols-2 gap-6">
-                        <div class="p-5 bg-savira-bg rounded-xl shadow-md border-t-4 border-savira-cyan">
-                            <h5 class="font-extrabold text-savira-cyan mb-1 flex items-center">
-                                <span class="text-3xl mr-2">🌬️</span> Montelukast Action
-                            </h5>
-                            <p class="text-gray-700">Reduces airway inflammation and helps prevent night-time coughing/wheezing due to allergies.</p>
-                        </div>
-                        <div class="p-5 bg-savira-bg rounded-xl shadow-md border-t-4 border-savira-coral">
-                            <h5 class="font-extrabold text-savira-coral mb-1 flex items-center">
-                                <span class="text-3xl mr-2">💧</span> Levocetirizine Action
-                            </h5>
-                            <p class="text-gray-700">Provides rapid relief from acute allergy symptoms: sneezing, runny nose, itchy eyes.</p>
-                        </div>
-                    </div>
-
-                    <p class="text-xl text-savira-text mt-8 leading-relaxed">
-                        **Indication:** Recommended by pediatricians for the effective management of seasonal allergies, dust allergies, and allergic asthma-related symptoms in children.
-                    </p>
-                    <a href="index.html#savimont" class="mt-6 inline-block bg-savira-cyan text-white px-8 py-3 rounded-full text-lg font-bold hover:bg-[#0094CC] transition-all duration-300 shadow-xl">
-                        View Parent Information (on Homepage)
+                <!-- SAVIRA LOGO IN FOOTER -->
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="inline-block mb-6 bg-white p-2.5 rounded-lg" title="Savira Life Sciences Home">
+                        <img src="assets/images/saviramainlogo.png" alt="SAVIRA Life Sciences Logo" class="h-10 lg:h-12 w-auto object-contain">
                     </a>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Dedicated to improving health outcomes for newborns, infants, and growing children with high-quality healthcare and nutritional solutions.
+                    </p>
                 </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h5 class="font-heading font-bold text-sm uppercase text-savira-action tracking-wider mb-4">Quick Links</h5>
+                    <ul class="space-y-2.5 text-sm text-gray-300 font-medium">
+                        <li><a href="about.html" class="hover:text-savira-action transition-colors">About Us</a></li>
+                        <li><a href="#divisions" class="hover:text-savira-action transition-colors">Our Divisions</a></li>
+                        <li><a href="products.html" class="hover:text-savira-action transition-colors">Our Products</a></li>
+                        <li><a href="#partner" class="hover:text-savira-action transition-colors">Partner With Us</a></li>
+                        <li><a href="#contact" class="hover:text-savira-action transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Divisions -->
+                <div>
+                    <h5 class="font-heading font-bold text-sm uppercase text-savira-action tracking-wider mb-4">Divisions</h5>
+                    <ul class="space-y-2.5 text-sm text-gray-300 font-medium">
+                        <li><a href="products.html" class="hover:text-savira-action transition-colors">NOVUS Care</a></li>
+                        <li><a href="products.html" class="hover:text-savira-action transition-colors">NEXUS Pediatric</a></li>
+                        <li><a href="https://winksbaby.com" target="_blank" rel="noopener noreferrer" class="hover:text-savira-action transition-colors">WINKS Baby Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h5 class="font-heading font-bold text-sm uppercase text-savira-action tracking-wider mb-4">Legal</h5>
+                    <ul class="space-y-2.5 text-sm text-gray-300 font-medium">
+                        <li><a href="#" class="hover:text-savira-action transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-savira-action transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-savira-action transition-colors">Quality Policy</a></li>
+                        <li><a href="#" class="hover:text-savira-action transition-colors">Disclaimer</a></li>
+                    </ul>
+                </div>
+
             </div>
-        </div>
-    </section>
 
-    <section id="pipeline" class="py-20 sm:py-28 bg-savira-navy text-white">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center scroll-reveal">
-            <h2 class="text-lg uppercase font-semibold tracking-widest text-savira-coral mb-3">Future of Pediatric Pharmaceuticals</h2>
-            <h3 class="text-4xl font-extrabold mb-8">
-                Our Research & Development Pipeline
-            </h3>
-            
-            <p class="text-xl text-savira-bg/90 mb-12 max-w-4xl mx-auto">
-                Savira Life Sciences maintains a robust R&D program focused on bringing innovative, high-quality, and patient-friendly formulations to the pediatric market.
-            </p>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-savira-navy/70 p-8 rounded-xl border-b-4 border-savira-cyan shadow-lg">
-                    <span class="text-4xl text-savira-cyan mb-3 block">🧪</span>
-                    <h4 class="text-2xl font-bold mb-2">Phase I/II Trials</h4>
-                    <p class="text-gray-300">New oral suspension for anti-infective therapy, focusing on palatability and compliance.</p>
-                </div>
-                <div class="bg-savira-navy/70 p-8 rounded-xl border-b-4 border-savira-coral shadow-lg">
-                    <span class="text-4xl text-savira-coral mb-3 block">🧬</span>
-                    <h4 class="text-2xl font-bold mb-2">Advanced Formulations</h4>
-                    <p class="text-gray-300">Development of chewable and quick-dissolve tablets for vitamins and minerals, maximizing bioavailability.</p>
-                </div>
-                <div class="bg-savira-navy/70 p-8 rounded-xl border-b-4 border-savira-cyan shadow-lg">
-                    <span class="text-4xl text-savira-cyan mb-3 block">🌱</span>
-                    <h4 class="text-2xl font-bold mb-2">Natural Wellness Line</h4>
-                    <p class="text-gray-300">Exploring standardized herbal extracts in syrups for gentle, supportive health benefits.</p>
-                </div>
-            </div>
-            
-            <a href="index.html#contact" class="mt-12 inline-block bg-savira-coral text-white px-10 py-4 rounded-full text-lg font-bold hover:bg-[#CC462A] transition-all duration-300 shadow-2xl">
-                Contact R&D for Partnerships
-            </a>
-        </div>
-    </section>
-
-    <footer class="bg-savira-navy text-white py-12 border-t-4 border-savira-cyan/50">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-            <p class="text-sm text-gray-400">
-                &copy; 2025 Savira Life Sciences. All rights reserved. | <span class="text-savira-coral">Precision in Pediatric Health.</span>
-            </p>
-            <div class="mt-4 space-x-4">
-                <a href="#" class="text-gray-400 hover:text-savira-cyan transition-colors duration-200 text-sm">Privacy Policy</a>
-                <span class="text-gray-600">|</span>
-                <a href="#" class="text-gray-400 hover:text-savira-cyan transition-colors duration-200 text-sm">Terms of Use</a>
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+                <p>&copy; 2026 Savira Life Sciences. All rights reserved.</p>
+                <p class="text-center md:text-right text-gray-500">
+                    Designed for pediatric care excellence.
+                </p>
             </div>
         </div>
     </footer>
 
-    <div id="product-modal" class="fixed inset-0 z-[9999] bg-gray-900 bg-opacity-80 flex items-center justify-center transition-opacity duration-300 opacity-0 pointer-events-none">
-        <div class="bg-white p-10 rounded-2xl shadow-2xl max-w-xl w-full transform transition-all duration-300 scale-90">
-            <h3 id="product-modal-title" class="text-3xl font-bold text-savira-navy mb-4 border-b pb-2">Product Information</h3>
-            <p id="product-modal-message" class="text-gray-700 text-lg mb-8">Generic modal message for product info.</p>
-            <button id="product-modal-close-button" class="w-full bg-savira-coral text-white py-3 rounded-xl font-semibold hover:bg-[#CC462A] transition-colors duration-300">
-                Acknowledge
-            </button>
-        </div>
-    </div>
-    
-    <script src="assets/js/script.js"></script>
-    
+
+    <!-- JAVASCRIPT FOR FILTERS & SEARCH -->
+    <script>
+        let currentDivision = 'all';
+
+        function filterCatalogue(division) {
+            currentDivision = division;
+            
+            // Update filter buttons styling
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.setAttribute('aria-selected', 'false');
+                btn.classList.remove('bg-savira-navy', 'text-white');
+                btn.classList.add('bg-filter-bg', 'text-savira-navy');
+            });
+            
+            // Highlight selected filter button if it's a local division tab
+            event.currentTarget.setAttribute('aria-selected', 'true');
+            event.currentTarget.classList.remove('bg-filter-bg', 'text-savira-navy');
+            event.currentTarget.classList.add('bg-savira-navy', 'text-white');
+
+            applyFiltersAndSearch();
+            updateURLState();
+        }
+
+        function handleSearch() {
+            applyFiltersAndSearch();
+            updateURLState();
+        }
+
+        function applyFiltersAndSearch() {
+            const query = document.getElementById('product-search').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.product-grid > div');
+            let visibleCount = 0;
+
+            cards.forEach(card => {
+                const name = card.getAttribute('data-name');
+                const form = card.getAttribute('data-form');
+                const division = card.getAttribute('data-division');
+
+                const matchesDivision = (currentDivision === 'all' || division === currentDivision);
+                const matchesQuery = (name.includes(query) || form.includes(query));
+
+                if (matchesDivision && matchesQuery) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            const noProductsMsg = document.getElementById('no-products-msg');
+            const productGrid = document.getElementById('product-grid');
+            if (visibleCount === 0) {
+                noProductsMsg.classList.remove('hidden');
+                productGrid.classList.add('hidden');
+            } else {
+                noProductsMsg.classList.add('hidden');
+                productGrid.classList.remove('hidden');
+            }
+        }
+
+        function clearFilters() {
+            document.getElementById('product-search').value = '';
+            const allBtn = document.querySelector('.filter-btn');
+            filterDivisionDirect('all', allBtn);
+        }
+
+        function filterDivisionDirect(division, btnElement) {
+            currentDivision = division;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.setAttribute('aria-selected', 'false');
+                btn.classList.remove('bg-savira-navy', 'text-white');
+                btn.classList.add('bg-filter-bg', 'text-savira-navy');
+            });
+            btnElement.setAttribute('aria-selected', 'true');
+            btnElement.classList.remove('bg-filter-bg', 'text-savira-navy');
+            btnElement.classList.add('bg-savira-navy', 'text-white');
+            applyFiltersAndSearch();
+        }
+
+        function updateURLState() {
+            const query = document.getElementById('product-search').value.trim();
+            const params = new URLSearchParams();
+            if (currentDivision !== 'all') params.set('division', currentDivision);
+            if (query) params.set('q', query);
+            
+            const newRelativePathQuery = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
+            window.history.replaceState(null, '', newRelativePathQuery);
+        }
+
+        // Restore state on load if URL has params
+        window.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            const divisionParam = params.get('division');
+            const qParam = params.get('q');
+
+            if (divisionParam && ['novus', 'nexus'].includes(divisionParam)) {
+                const targetBtn = Array.from(document.querySelectorAll('.filter-btn')).find(b => b.textContent.trim().toLowerCase() === divisionParam);
+                if (targetBtn) {
+                    filterDivisionDirect(divisionParam, targetBtn);
+                }
+            }
+            if (qParam) {
+                document.getElementById('product-search').value = qParam;
+                handleSearch();
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>

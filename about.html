@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Savira Life Sciences | Our Purpose and Divisions</title>
+    <meta name="description" content="Learn about Savira Life Sciences, our purpose and our NOVUS, NEXUS and WINKS BABY divisions for neonatal, pediatric and everyday baby care.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/saviramainlogo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'savira-navy': '#0C2340',
+                        'savira-orange': '#F26A21',
+                        'savira-action': '#F26A21',
+                        'savira-action-hover': '#9C3B08',
+                        'savira-text': '#14283F',
+                        'savira-muted': '#526171',
+                        'savira-pale-blue': '#EFF5FA',
+                        'savira-light-gray': '#F5F6F8',
+                        'savira-border': '#DCE6EF',
+                        'savira-card-border': '#E6EBF0',
+                        'novus-bg': '#FFF0E5',
+                        'nexus-bg': '#E9F3FE',
+                        'winks-bg': '#EAF5ED',
+                    },
+                    fontFamily: {
+                        heading: ['Manrope', 'Arial', 'sans-serif'],
+                        body: ['Inter', 'Arial', 'sans-serif'],
+                    },
+                    maxWidth: {
+                        'container': '1280px',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --navy: #0C2340;
+            --orange: #F26A21;
+            --action-orange: #B9470A;
+            --body: #526171;
+            --heading-font: "Manrope", Arial, sans-serif;
+            --body-font: "Inter", Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--body);
+            background-color: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6, .font-heading {
+            font-family: var(--heading-font);
+        }
+
+        /* Hero Image Arch Mask */
+        .curved-hero-mask {
+            border-top-left-radius: 45% 55%;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            overflow: hidden;
+        }
+
+        .savira-card-shadow {
+            box-shadow: 0 4px 20px rgba(12, 35, 64, 0.04);
+        }
+
+        /* Hover elevation effect */
+        .savira-hover-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .savira-hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(12, 35, 64, 0.08);
+            border-color: #F26A21;
+        }
+
+        a:focus-visible, button:focus-visible {
+            outline: 2px solid var(--navy);
+            outline-offset: 3px;
+        }
+
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+    </style>
+</head>
+<body class="bg-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-50 bg-white border-b border-savira-border h-[88px] flex items-center">
+        <div class="max-w-container mx-auto px-5 lg:px-10 w-full flex justify-between items-center">
+            <!-- Logo -->
+            <a href="index.html" class="flex items-center" aria-label="Savira Life Sciences Home">
+                <img src="assets/images/saviramainlogo.png" alt="Savira Life Sciences Logo" class="h-12 lg:h-14 w-auto object-contain">
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-heading font-medium text-savira-navy">
+                <a href="index.html" class="hover:text-savira-action transition-colors">Home</a>
+                <a href="about.html" aria-current="page" class="relative text-savira-navy font-semibold py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-savira-orange">About Us</a>
+                <a href="index.html#divisions" class="hover:text-savira-action transition-colors">Our Divisions</a>
+                <a href="index.html#portfolio" class="hover:text-savira-action transition-colors">Our Portfolio</a>
+                <a href="index.html#partner" class="hover:text-savira-action transition-colors">Partner With Us</a>
+            </nav>
+
+            <!-- Right Action Button -->
+            <div class="hidden md:block">
+                <a href="index.html#contact" class="inline-flex items-center justify-center px-5 py-2.5 border border-savira-navy text-savira-navy font-heading font-semibold text-sm rounded-[6px] hover:bg-savira-pale-blue transition-colors min-h-[44px]">
+                    Contact Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-savira-navy focus:outline-none p-2" aria-label="Toggle Navigation Menu">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-[88px] left-0 w-full bg-white border-b border-savira-border shadow-lg py-4 px-6 flex flex-col space-y-4 font-heading font-medium">
+            <a href="index.html" class="mobile-link text-savira-navy py-1">Home</a>
+            <a href="about.html" aria-current="page" class="mobile-link text-savira-navy font-bold py-1">About Us</a>
+            <a href="index.html#divisions" class="mobile-link text-savira-navy py-1">Our Divisions</a>
+            <a href="index.html#portfolio" class="mobile-link text-savira-navy py-1">Our Portfolio</a>
+            <a href="index.html#partner" class="mobile-link text-savira-navy py-1">Partner With Us</a>
+            <a href="index.html#contact" class="mobile-link inline-block text-center px-5 py-2.5 border border-savira-navy text-savira-navy font-semibold text-sm rounded-[6px]">Contact Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- ABOUT HERO SECTION -->
+        <section class="py-12 lg:py-16 bg-white overflow-hidden min-h-[500px] lg:min-h-[560px] flex items-center">
+            <div class="max-w-container mx-auto px-5 lg:px-10 w-full">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-10 lg:gap-12">
+                    
+                    <!-- Text Left -->
+                    <div class="w-full lg:w-[46%] max-w-[560px]">
+                        <p class="text-[11px] lg:text-[12px] font-body font-medium text-savira-action uppercase tracking-[2px] mb-3">
+                            ABOUT SAVIRA
+                        </p>
+                        <h1 class="text-[38px] lg:text-[64px] font-heading font-bold leading-[1.08] tracking-[-1.4px] text-savira-navy mb-6">
+                            Focused on childhood<span class="text-savira-orange">.</span><br>Guided by science<span class="text-savira-orange">.</span>
+                        </h1>
+                        <p class="text-[16px] lg:text-[18px] leading-[1.6] text-savira-muted font-body">
+                            Our focus spans newborn care, pediatric care and everyday baby care.
+                        </p>
+                    </div>
+
+                    <!-- Photography Right -->
+                    <div class="w-full lg:w-[54%]">
+                        <div class="bg-savira-pale-blue rounded-[24px] p-4 lg:p-6">
+                            <div class="curved-hero-mask w-full h-[320px] sm:h-[400px] lg:h-[440px] bg-gray-100">
+                                <img src="assets/images/hero_mother_child.png" alt="Mother holding her child with care" class="w-full h-full object-cover object-center" width="680" height="440">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHO WE ARE SECTION -->
+        <section class="py-16 lg:py-20 bg-white border-t border-savira-border">
+            <div class="max-w-container mx-auto px-5 lg:px-10 text-center">
+                <div class="max-w-[820px] mx-auto">
+                    <p class="text-[11px] lg:text-[12px] font-body font-medium text-savira-action uppercase tracking-[2px] mb-2">
+                        WHO WE ARE
+                    </p>
+                    <h2 class="text-[28px] lg:text-[40px] font-heading font-bold leading-[1.2] tracking-[-0.6px] text-savira-navy mb-6">
+                        A clear focus<span class="text-savira-orange">.</span> A shared purpose<span class="text-savira-orange">.</span>
+                    </h2>
+                    <div class="space-y-4 text-[16px] lg:text-[18px] leading-[1.6] text-savira-muted font-body">
+                        <p>
+                            Savira Life Sciences is a pediatric-focused company building a portfolio of pharmaceutical, nutritional and baby-care products.
+                        </p>
+                        <p>
+                            Through NOVUS, NEXUS and WINKS BABY, we bring a dedicated focus to different stages and needs of childhood.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR STORY SECTION -->
+        <section class="py-16 lg:py-20 bg-white border-t border-savira-border">
+            <div class="max-w-container mx-auto px-5 lg:px-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="assets/images/story_baby_hand.png" alt="Baby's hand holding an adult finger" class="w-full h-[320px] sm:h-[400px] object-cover rounded-[12px] border border-savira-border" loading="lazy" width="600" height="400">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <p class="text-[11px] lg:text-[12px] font-body font-medium text-savira-action uppercase tracking-[2px] mb-2">
+                            OUR STORY
+                        </p>
+                        <h2 class="text-[28px] lg:text-[40px] font-heading font-bold leading-[1.2] tracking-[-0.6px] text-savira-navy mb-6">
+                            Built around the needs of childhood<span class="text-savira-orange">.</span>
+                        </h2>
+                        <p class="text-[16px] lg:text-[18px] leading-[1.6] text-savira-muted font-body">
+                            Our story centres on a focused approach to childhood care, bringing newborn medicines, pediatric products and everyday baby care under one company.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR PURPOSE SECTION -->
+        <section class="bg-savira-pale-blue py-12 lg:py-16 border-y border-savira-border">
+            <div class="max-w-container mx-auto px-5 lg:px-10 text-center">
+                <div class="max-w-[900px] mx-auto">
+                    <p class="text-[11px] lg:text-[12px] font-body font-medium text-savira-action uppercase tracking-[2px] mb-3">
+                        OUR PURPOSE
+                    </p>
+                    <p class="text-[24px] lg:text-[32px] font-heading font-semibold text-savira-navy leading-[1.3]">
+                        To support childhood care through a focused and thoughtfully selected product portfolio<span class="text-savira-orange">.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR DIVISIONS SECTION -->
+        <section class="py-16 lg:py-20 bg-white" id="divisions">
+            <div class="max-w-container mx-auto px-5 lg:px-10">
+                <div class="mb-12">
+                    <p class="text-[11px] lg:text-[12px] font-body font-medium text-savira-action uppercase tracking-[2px] mb-2">
+                        OUR DIVISIONS
+                    </p>
+                    <h2 class="text-[28px] lg:text-[40px] font-heading font-bold leading-[1.2] tracking-[-0.6px] text-savira-navy">
+                        Three divisions<span class="text-savira-orange">.</span> One shared purpose<span class="text-savira-orange">.</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- NOVUS -->
+                    <div class="group bg-white rounded-[12px] border border-savira-border p-8 flex flex-col justify-between savira-card-shadow savira-hover-card cursor-pointer">
+                        <div>
+                            <div class="w-[88px] h-[88px] rounded-full bg-novus-bg flex items-center justify-center mb-6 transition-transform group-hover:scale-105">
+                                <!-- Small PNG Image Holder -->
+                                <img src="assets/images/icon_novus_newborn.png" alt="NOVUS Neonatal Care PNG" class="w-12 h-12 object-contain">
+                            </div>
+                            <h3 class="text-[28px] lg:text-[32px] font-heading font-semibold tracking-[1.2px] text-savira-navy mb-1 group-hover:text-savira-action transition-colors">NOVUS</h3>
+                            <p class="text-[11px] lg:text-[12px] font-body font-medium uppercase tracking-[2px] text-savira-action mb-4">NEONATAL CARE</p>
+                            <p class="text-[16px] leading-[1.6] text-savira-muted mb-6">Newborn-focused medicines for neonatal care.</p>
+                        </div>
+                        <a href="index.html#portfolio" class="inline-flex items-center text-savira-action font-heading font-semibold text-[14px] gap-2" aria-label="Explore NOVUS">
+                            Explore NOVUS <span class="text-[18px] transition-transform group-hover:translate-x-2">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- NEXUS -->
+                    <div class="group bg-white rounded-[12px] border border-savira-border p-8 flex flex-col justify-between savira-card-shadow savira-hover-card cursor-pointer">
+                        <div>
+                            <div class="w-[88px] h-[88px] rounded-full bg-nexus-bg flex items-center justify-center mb-6 transition-transform group-hover:scale-105">
+                                <!-- Small PNG Image Holder -->
+                                <img src="assets/images/icon_nexus_child.png" alt="NEXUS Pediatric Care PNG" class="w-12 h-12 object-contain">
+                            </div>
+                            <h3 class="text-[28px] lg:text-[32px] font-heading font-semibold tracking-[1.2px] text-savira-navy mb-1 group-hover:text-savira-action transition-colors">NEXUS</h3>
+                            <p class="text-[11px] lg:text-[12px] font-body font-medium uppercase tracking-[2px] text-savira-action mb-4">PEDIATRIC CARE</p>
+                            <p class="text-[16px] leading-[1.6] text-savira-muted mb-6">Medicines and nutritional products for growing children.</p>
+                        </div>
+                        <a href="index.html#portfolio" class="inline-flex items-center text-savira-action font-heading font-semibold text-[14px] gap-2" aria-label="Explore NEXUS">
+                            Explore NEXUS <span class="text-[18px] transition-transform group-hover:translate-x-2">&rarr;</span>
+                        </a>
+                    </div>
+
+                    <!-- WINKS BABY -->
+                    <div class="group bg-white rounded-[12px] border border-savira-border p-8 flex flex-col justify-between savira-card-shadow savira-hover-card cursor-pointer">
+                        <div>
+                            <div class="w-[88px] h-[88px] rounded-full bg-winks-bg flex items-center justify-center mb-6 transition-transform group-hover:scale-105">
+                                <!-- Small PNG Image Holder -->
+                                <img src="assets/images/icon_winks_bottle.png" alt="WINKS BABY Care PNG" class="w-12 h-12 object-contain">
+                            </div>
+                            <h3 class="text-[28px] lg:text-[32px] font-heading font-semibold tracking-[1.2px] text-savira-navy mb-1 group-hover:text-savira-action transition-colors">WINKS BABY</h3>
+                            <p class="text-[11px] lg:text-[12px] font-body font-medium uppercase tracking-[2px] text-savira-action mb-4">BABY CARE</p>
+                            <p class="text-[16px] leading-[1.6] text-savira-muted mb-6">Everyday skin care, hygiene and feeding essentials.</p>
+                        </div>
+                        <a href="index.html#portfolio" class="inline-flex items-center text-savira-action font-heading font-semibold text-[14px] gap-2" aria-label="Explore WINKS BABY">
+                            Explore WINKS BABY <span class="text-[18px] transition-transform group-hover:translate-x-2">&rarr;</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT GUIDES US SECTION -->
+        <section class="py-16 lg:py-20 bg-savira-light-gray border-t border-savira-border">
+            <div class="max-w-container mx-auto px-5 lg:px-10">
+                <div class="mb-12">
+                    <p class="text-[11px] lg:text-[12px] font-body font-medium text-savira-action uppercase tracking-[2px] mb-2">
+                        WHAT GUIDES US
+                    </p>
+                    <h2 class="text-[28px] lg:text-[40px] font-heading font-bold leading-[1.2] tracking-[-0.6px] text-savira-navy">
+                        Principles that shape our direction<span class="text-savira-orange">.</span>
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 lg:divide-x lg:divide-savira-border">
+                    <div class="flex flex-col items-start lg:px-6 first:pl-0">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 shadow-sm border border-savira-border">
+                            <svg class="w-6 h-6 text-savira-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-savira-navy text-[18px] mb-2">Childhood focus</h3>
+                        <p class="text-[14px] lg:text-[15px] leading-[1.5] text-savira-muted font-body">Dedicated to the needs of newborns and growing children.</p>
+                    </div>
+
+                    <div class="flex flex-col items-start lg:px-6">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 shadow-sm border border-savira-border">
+                            <svg class="w-6 h-6 text-savira-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-savira-navy text-[18px] mb-2">Clear information</h3>
+                        <p class="text-[14px] lg:text-[15px] leading-[1.5] text-savira-muted font-body">We prioritise clear and responsible product information.</p>
+                    </div>
+
+                    <div class="flex flex-col items-start lg:px-6">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 shadow-sm border border-savira-border">
+                            <svg class="w-6 h-6 text-savira-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-savira-navy text-[18px] mb-2">Quality as a priority</h3>
+                        <p class="text-[14px] lg:text-[15px] leading-[1.5] text-savira-muted font-body">We place importance on product quality and responsible partnerships.</p>
+                    </div>
+
+                    <div class="flex flex-col items-start lg:px-6 last:pr-0">
+                        <div class="w-12 h-12 rounded-full bg-white flex items-center justify-center mb-4 shadow-sm border border-savira-border">
+                            <svg class="w-6 h-6 text-savira-navy" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                        </div>
+                        <h3 class="font-heading font-bold text-savira-navy text-[18px] mb-2">Lasting partnerships</h3>
+                        <p class="text-[14px] lg:text-[15px] leading-[1.5] text-savira-muted font-body">We aim to build lasting relationships with healthcare professionals and business partners.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- OUR DIRECTION SECTION -->
+        <section class="py-16 lg:py-20 bg-white">
+            <div class="max-w-container mx-auto px-5 lg:px-10">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+                    <div>
+                        <p class="text-[11px] lg:text-[12px] font-body font-medium text-savira-action uppercase tracking-[2px] mb-2">
+                            OUR DIRECTION
+                        </p>
+                        <h2 class="text-[28px] lg:text-[40px] font-heading font-bold leading-[1.2] tracking-[-0.6px] text-savira-navy mb-6">
+                            Growing with purpose<span class="text-savira-orange">.</span>
+                        </h2>
+                        <p class="text-[16px] lg:text-[18px] leading-[1.6] text-savira-muted font-body">
+                            We aim to grow a focused portfolio that supports healthcare professionals and families across newborn, pediatric and everyday baby care.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="assets/images/direction_smiling_baby.png" alt="Smiling baby lying peacefully" class="w-full h-[300px] sm:h-[380px] object-cover rounded-[12px] border border-savira-border" loading="lazy" width="600" height="380">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PARTNERSHIP BANNER -->
+        <section class="bg-savira-navy text-white py-12 lg:py-16" id="partner">
+            <div class="max-w-container mx-auto px-5 lg:px-10">
+                <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+                    <div class="max-w-2xl text-center lg:text-left">
+                        <h2 class="text-[28px] lg:text-[40px] font-heading font-bold leading-[1.15]">
+                            Build the next chapter with Savira<span class="text-savira-orange">.</span>
+                        </h2>
+                    </div>
+                    <div>
+                        <a href="index.html#partner" class="inline-flex items-center justify-center bg-white hover:bg-gray-100 text-savira-navy font-heading font-semibold text-[14px] px-8 rounded-[6px] min-h-[48px] transition-colors whitespace-nowrap">
+                            Partner With Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER SECTION -->
+    <footer class="bg-savira-navy text-white pt-16 pb-8 border-t border-gray-800">
+        <div class="max-w-container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-gray-800">
+                
+                <!-- SAVIRA LOGO IN FOOTER -->
+                <div class="lg:col-span-2">
+                    <a href="index.html" class="inline-block mb-6 bg-white p-2.5 rounded-lg" title="Savira Life Sciences Home">
+                        <img src="assets/images/saviramainlogo.png" alt="SAVIRA Life Sciences Logo" class="h-10 lg:h-12 w-auto object-contain">
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Dedicated to improving health outcomes for newborns, infants, and growing children with high-quality healthcare and nutritional solutions.
+                    </p>
+                </div>
+
+                <!-- Navigation -->
+                <div>
+                    <h5 class="font-heading font-bold text-sm uppercase text-savira-action tracking-wider mb-4">Quick Links</h5>
+                    <ul class="space-y-2.5 text-sm text-gray-300 font-medium">
+                        <li><a href="about.html" class="hover:text-savira-action transition-colors">About Us</a></li>
+                        <li><a href="#divisions" class="hover:text-savira-action transition-colors">Our Divisions</a></li>
+                        <li><a href="index.html#portfolio" class="hover:text-savira-action transition-colors">Our Products</a></li>
+                        <li><a href="#partner" class="hover:text-savira-action transition-colors">Partner With Us</a></li>
+                        <li><a href="index.html#contact" class="hover:text-savira-action transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Divisions -->
+                <div>
+                    <h5 class="font-heading font-bold text-sm uppercase text-savira-action tracking-wider mb-4">Divisions</h5>
+                    <ul class="space-y-2.5 text-sm text-gray-300 font-medium">
+                        <li><a href="#divisions" class="hover:text-savira-action transition-colors">NOVUS Care</a></li>
+                        <li><a href="#divisions" class="hover:text-savira-action transition-colors">NEXUS Pediatric</a></li>
+                        <li><a href="#divisions" class="hover:text-savira-action transition-colors">WINKS Baby Care</a></li>
+                    </ul>
+                </div>
+
+                <!-- Legal -->
+                <div>
+                    <h5 class="font-heading font-bold text-sm uppercase text-savira-action tracking-wider mb-4">Legal</h5>
+                    <ul class="space-y-2.5 text-sm text-gray-300 font-medium">
+                        <li><a href="#" class="hover:text-savira-action transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-savira-action transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-savira-action transition-colors">Quality Policy</a></li>
+                        <li><a href="#" class="hover:text-savira-action transition-colors">Disclaimer</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom Copyright -->
+            <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-gray-400">
+                <p>&copy; 2026 Savira Life Sciences. All rights reserved.</p>
+                <p class="text-center md:text-right text-gray-500">
+                    Designed for pediatric care excellence.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
