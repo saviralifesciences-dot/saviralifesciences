@@ -165,7 +165,7 @@
 
     <main>
         <!-- HERO SECTION -->
-        <section class="bg-hero-bg py-[56px] lg:py-[72px] min-h-[408px] flex items-center border-b border-light-border">
+        <section class="bg-hero-bg py-[56px] lg:py-[72px] min-h-[408px] lg:min-h-[560px] flex items-center border-b border-light-border">
             <div class="container-custom">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-[48px] items-center">
                     
@@ -184,8 +184,8 @@
 
                     <!-- Hero Artwork / Still Life -->
                     <div class="flex justify-center lg:justify-end">
-                        <div class="w-full max-w-[580px] h-[330px] flex items-center justify-center p-4">
-                            <img src="assets/images/products-hero-stilllife.png" alt="Savira portfolio showcase" class="max-h-full max-w-full object-contain">
+                        <div class="w-full max-w-[720px] h-[300px] lg:h-[500px] flex items-center justify-center">
+                            <img src="assets/images/product page hero image.png" alt="Savira portfolio showcase" class="max-h-full max-w-full object-contain">
                         </div>
                     </div>
 
@@ -234,8 +234,44 @@
                 <!-- Product Grid -->
                 <div class="product-grid" id="product-grid">
                     
-                    <!-- 1. Nutrivira Jr -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="nutrivira jr" data-division="nexus" data-form="syrup">
+                    <!-- 1. Clausikid -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="clausikid" data-division="nexus" data-form="" data-order="1">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/Clausi Kid Medical Packaging Box.png" alt="Clausikid packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">Clausikid</h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">&nbsp;</p>
+                        <button type="button" onclick="showProductDetails(this)" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">View Details <span class="text-[18px]">&rarr;</span></button>
+                    </div>
+
+                    <!-- 5. Levovir 0.31 -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="levovir 0.31" data-division="nexus" data-form="inhalation solution 0.31 mg 2.5 ml" data-order="5">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/Levovir 0.31.png" alt="Levovir 0.31 mg inhalation solution packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">Levovir 0.31</h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">0.31 mg / 2.5 ml</p>
+                        <button type="button" onclick="showProductDetails(this)" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">View Details <span class="text-[18px]">&rarr;</span></button>
+                    </div>
+
+                    <!-- 6. Levovir 0.63 -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="levovir 0.63" data-division="nexus" data-form="inhalation solution 0.63 mg 2.5 ml" data-order="6">
+                        <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
+                            <img src="assets/images/levovir 0.63.png" alt="Levovir 0.63 mg inhalation solution packaging" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <div class="min-h-[56px] flex flex-col justify-center">
+                            <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">Levovir 0.63</h3>
+                        </div>
+                        <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">0.63 mg / 2.5 ml</p>
+                        <button type="button" onclick="showProductDetails(this)" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">View Details <span class="text-[18px]">&rarr;</span></button>
+                    </div>
+
+                    <!-- 3. Nutrivira Jr -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="nutrivira jr" data-division="nexus" data-form="syrup" data-order="3">
                         <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
                             <img src="assets/images/NutriVIRA Junior Syrup Set.png" alt="Nutrivira Jr Syrup packaging" class="max-h-full max-w-full object-contain">
                         </div>
@@ -253,7 +289,7 @@
                     </div>
 
                     <!-- 2. Savimont LC -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="savimont lc" data-division="nexus" data-form="syrup">
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="savimont lc" data-division="nexus" data-form="syrup" data-order="2">
                         <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
                             <img src="assets/images/product_savimont_lc.png" alt="Savimont LC Syrup packaging" class="max-h-full max-w-full object-contain">
                         </div>
@@ -265,13 +301,13 @@
                         <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
                             Syrup
                         </p>
-                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                        <a href="savimont-lc-kid.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
                             View Details <span class="text-[18px]">&rarr;</span>
                         </a>
                     </div>
 
-                    <!-- 3. Lansavira Jr -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="lansavira jr" data-division="nexus" data-form="15 mg dt">
+                    <!-- 4. Lansavira Jr -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="lansavira jr" data-division="nexus" data-form="15 mg dt" data-order="4">
                         <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
                             <img src="assets/images/Lansavira-JR Pharmaceutical Blister Box.png" alt="Lansavira Jr 15 mg DT packaging" class="max-h-full max-w-full object-contain">
                         </div>
@@ -288,14 +324,14 @@
                         </a>
                     </div>
 
-                    <!-- 4. NSjr -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="nsjr" data-division="novus" data-form="drops">
+                    <!-- 9. NSjr Drops -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="nsjr drops" data-division="novus" data-form="drops" data-order="9">
                         <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
-                            <img src="assets/images/product_nsjr_drops.png" alt="NSjr Drops packaging" class="max-h-full max-w-full object-contain">
+                            <img src="assets/images/Savira Saline Nasal Drops Bottle.png" alt="NSjr Drops packaging" class="max-h-full max-w-full object-contain">
                         </div>
                         <div class="min-h-[56px] flex flex-col justify-center">
                             <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
-                                NSjr
+                                NSjr Drops
                             </h3>
                         </div>
                         <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
@@ -306,8 +342,8 @@
                         </a>
                     </div>
 
-                    <!-- 5. VIRA D3 -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="vira d3" data-division="nexus" data-form="drops">
+                    <!-- 10. VIRA D3 Drops -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="vira d3 drops" data-division="novus" data-form="drops" data-order="10">
                         <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
                             <img src="assets/images/Vitamin D3 Oral Drops Product Display.png" alt="VIRA D3 Drops packaging" class="max-h-full max-w-full object-contain">
                         </div>
@@ -319,13 +355,13 @@
                         <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
                             Drops
                         </p>
-                        <a href="nutrivira-jr.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
+                        <a href="virad3.html" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">
                             View Details <span class="text-[18px]">&rarr;</span>
                         </a>
                     </div>
 
-                    <!-- 6. H-NEB -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="h-neb" data-division="novus" data-form="3% ns respules">
+                    <!-- 8. H-NEB -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="h-neb" data-division="nexus" data-form="3% ns respules" data-order="8">
                         <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
                             <img src="assets/images/H-Neb Sodium Chloride Inhalation Solution Box.png" alt="H-NEB 3% NS Respules packaging" class="max-h-full max-w-full object-contain">
                         </div>
@@ -343,7 +379,7 @@
                     </div>
 
                     <!-- 7. Budavir -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="budavir" data-division="novus" data-form="respules">
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="budavir" data-division="nexus" data-form="respules" data-order="7">
                         <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
                             <img src="assets/images/Budavir Nebuliser Suspension Packaging.png" alt="Budavir Respules packaging" class="max-h-full max-w-full object-contain">
                         </div>
@@ -360,23 +396,24 @@
                         </a>
                     </div>
 
-                    <!-- 8. Microsomal Iron Syrup -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="microsomal iron syrup" data-division="nexus" data-form="syrup">
+                    <!-- 11. Microsomal Iron Syrup -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="microsomal iron syrup" data-division="nexus" data-form="syrup" data-order="11">
                         <div class="w-full aspect-square bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-[20px] overflow-hidden">
                             <img src="assets/images/microsomal iron syrup.jpeg" alt="Microsomal Iron Syrup packaging" class="max-h-full max-w-full object-contain">
                         </div>
                         <div class="min-h-[56px] flex flex-col justify-center">
                             <h3 class="text-[20px] lg:text-[22px] font-heading font-bold text-savira-navy leading-[1.25] tracking-[-0.01em]">
-                                Microsomal Iron Syrup
+                                Activiron Iron Syrup
                             </h3>
                         </div>
                         <p class="text-[16px] text-savira-body font-normal mt-[8px] mb-[20px]">
                             Syrup
                         </p>
+                        <button type="button" onclick="showProductDetails(this)" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-auto">View Details <span class="text-[18px]">&rarr;</span></button>
                     </div>
 
-                    <!-- 9. TROOVIT (Coming Soon) -->
-                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="troovit" data-division="nexus" data-form="syrup">
+                    <!-- 12. TROOVIT (Coming Soon) -->
+                    <div class="product-card bg-white p-[20px] flex flex-col justify-between relative" data-name="troovit" data-division="nexus" data-form="syrup" data-order="12">
                         <!-- Coming Soon Badge -->
                         <div class="absolute top-[32px] right-[32px] z-10 bg-white border border-button-orange text-button-orange px-[12px] py-[6px] rounded-[999px] text-[12px] font-medium">
                             Coming Soon
@@ -393,11 +430,25 @@
                             Syrup
                         </p>
                         <span class="text-[15px] font-semibold text-savira-body mt-auto">
-                            Details coming soon
+                            
                         </span>
+                        <button type="button" onclick="showProductDetails(this)" class="inline-flex items-center text-button-orange hover:text-button-hover font-semibold text-[15px] gap-[12px] mt-[12px]">View Details <span class="text-[18px]">&rarr;</span></button>
                     </div>
 
                 </div>
+
+                <dialog id="product-details-dialog" class="w-[min(90vw,560px)] rounded-[12px] p-0 shadow-2xl backdrop:bg-savira-navy/50">
+                    <div class="p-6 sm:p-8">
+                        <div class="flex justify-between items-start gap-4 mb-5">
+                            <h2 id="product-details-title" class="text-[24px] sm:text-[28px] font-heading font-bold text-savira-navy"></h2>
+                            <button type="button" onclick="document.getElementById('product-details-dialog').close()" class="text-savira-body hover:text-savira-navy text-2xl leading-none" aria-label="Close product details">&times;</button>
+                        </div>
+                        <div class="w-full aspect-square max-h-[320px] bg-card-bg rounded-[8px] p-4 flex items-center justify-center mb-5 overflow-hidden">
+                            <img id="product-details-image" src="" alt="" class="max-h-full max-w-full object-contain">
+                        </div>
+                        <p id="product-details-description" class="text-[16px] text-savira-body"></p>
+                    </div>
+                </dialog>
 
                 <!-- Empty Results State -->
                 <div id="no-products-msg" class="hidden text-center py-[64px]">
@@ -539,6 +590,19 @@
     <script>
         let currentDivision = 'all';
 
+        function showProductDetails(button) {
+            const card = button.closest('.product-card');
+            const image = card.querySelector('img');
+            const description = card.querySelector('p').textContent.trim();
+            const dialog = document.getElementById('product-details-dialog');
+
+            document.getElementById('product-details-title').textContent = card.querySelector('h3').textContent.trim();
+            document.getElementById('product-details-description').textContent = description || 'Contact us for product details.';
+            document.getElementById('product-details-image').src = image.src;
+            document.getElementById('product-details-image').alt = image.alt;
+            dialog.showModal();
+        }
+
         function filterCatalogue(division) {
             currentDivision = division;
             
@@ -626,6 +690,11 @@
 
         // Restore state on load if URL has params
         window.addEventListener('DOMContentLoaded', () => {
+            const productGrid = document.getElementById('product-grid');
+            const productCards = Array.from(productGrid.children);
+            productCards.sort((a, b) => Number(a.dataset.order) - Number(b.dataset.order));
+            productCards.forEach(card => productGrid.appendChild(card));
+
             const params = new URLSearchParams(window.location.search);
             const divisionParam = params.get('division');
             const qParam = params.get('q');
